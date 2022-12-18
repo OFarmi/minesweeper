@@ -3,13 +3,47 @@
     <head>
         <link rel="stylesheet" href="css/index.css">
         <title>Minesweeper</title>
+        <style>
+            .parent {
+                align-items: flex-start;
+                display: flex;
+            }
+            .under {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
     </head>
     <body>
-        <div id="gameContainer" class="container">
-            <div id="gameGrid" class="grid">
+        <h3 id="gameOver"></h3>
+        <div class="parent">
+            <div id="gameContainer" class="container" style="margin:10px; float:left">
+                <div id="gameGrid" class="grid">
+                </div>
+            </div>
+            <span>
+                <button id="resetGame">Reset Game</button>
+            </span>
+            <form style="margin:10px; float:left">
+                <label for="user">Username:</label><br>
+                <input type="text" id="user" name="user"><br>
+                <label for="pass">Password:</label><br>
+                <input type="text" id="pass" name="pass"><br><br>
+                <input type="button" value="Login" id="login">
+                <input type="button" value="Register" id="register">
+                <input type="button" value="Logout" id="logout" style="visibility: hidden">
+            </form>
+            <div>
+                <h4 id="loginmsg" style="float:top"></h4>
             </div>
         </div>
-        <button id="resetGame">Reset Game</button>
+        <div class="under">
+            <input type="button" value="&lt&lt" id="first" style="visibility: hidden">
+            <input type="button" value="&lt" id="prev" style="visibility: hidden">
+            <input type="button" value="&gt" id="next" style="visibility: hidden">
+            <input type="button" value="&gt&gt" id="last" style="visibility: hidden">
+        </div>
     </body>
     <script src="js/index.js"></script>
 </html>
